@@ -1,4 +1,5 @@
 import React from 'react'
+import TypeDemo from './components/typescript';
 
 function App() {
   return (
@@ -6,8 +7,10 @@ function App() {
       <div className="glow"></div>
       <h1>Hello Sav</h1>
       <p>A minimalist React + Vite Template</p>
+      <TypeDemo />
     </div>
   )
 }
 
-export default App
+
+
