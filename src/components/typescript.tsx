@@ -34,14 +34,16 @@ function Demo() {
     return (
         <div>
             <h1>Type Demo</h1>
-            <p></p>
             <p>{drinkQueue[0].Menu.name}</p>
+            <p id="alldrinks"></p>
             <button onClick={() => {
                 //adds new drink to queue
                 drinkQueue.push({
                     Menu: { name: "beer", price: 10, stock: 1 }, id: 2, status: "ordered"
                 })
-            }}>submit</button>
+                document.getElementById("alldrinks").innerHTML = drinkQueue[0].Menu.name;
+            }
+            }>submit</button>
         </div >
     )
 }
