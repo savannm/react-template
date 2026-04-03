@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;900&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --text-color: #ffffff;
+  --accent-color: #0070f3;
+  --secondary-color: #888888;
+  --glow-color: rgba(0, 112, 243, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #111 0%, #050505 100%);
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  background: linear-gradient(to bottom, #fff 0%, #aaa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+h1::after {
+  content: 'Hello World';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(40px);
+  background: var(--accent-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.4;
+}
+
+p {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  animation: slideUp 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle mouse glow effect placeholder */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
